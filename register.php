@@ -14,10 +14,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
  $a5=$_POST['q5'];
  $a6=$_POST['q6'];
  $a7=$_POST['q7'];
-mysql_connect("localhost", "root","") or die(mysql_error()); 
-mysql_select_db("e_comm") or die("Cannot connect to database");
-mysql_query("INSERT INTO users (name,dob,gender,rollNum,email,phoneNum,dept,q1,q2,q3,q4,q5,q6,q7) 
-	        VALUES ('$name','$dob','$gender','$rollNum','$email','$phoneNum','$dept','$a1','$a2','$a3','$a4','$a5','$a6','$a7')"); 
+ $conn = mysql_connect("localhost", "root","") or die(mysql_error());
+mysql_select_db($conn, "e_comm") or die("Cannot connect to database");
+$query = $conn->prepare("INSERT INTO users (name,dob,gender,rollNum,email,phoneNum,dept,q1,q2,q3,q4,q5,q6,q7) 
+	        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$query->bind_param("sssssssiiiiiii", $name,$dob,$gender,$rollNum,$email,$phoneNum,$dept,$a1,$a2,$a3,$a4,$a5,$a6,$a7);
+$query->execute();
 Print '<script>alert("Successfully Registered!");</script>'; 
 Print '<script>window.location.assign("index.html");</script>';
 }
