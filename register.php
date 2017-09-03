@@ -20,7 +20,7 @@ $query = $conn->prepare("INSERT INTO users (name,dob,gender,rollNum,email,phoneN
 	        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 $query->bind_param("sssssssiiiiiii", $name,$dob,$gender,$rollNum,$email,$phoneNum,$dept,$a1,$a2,$a3,$a4,$a5,$a6,$a7);
 $query->execute();
-Print '<script>alert("Successfully Registered!");</script>'; 
-Print '<script>window.location.assign("index.html");</script>';
+Print "Succesfully Registered";
+Print '<script>window.location.assign("index.php");</script>';
 }
 ?>
