@@ -207,14 +207,13 @@ h1{
         // var phoneNum=$('#phoneNum').val();
         // var dept=$('#dept').val();
         // var q1=$('input:range[name=q1]')
-        var myForm = document.getElementById("myForm");
-        var fd = new FormData(myForm );
-        console.log(fd);
+        var data = $('form').serializeArray();
+        console.log(data);
         if (name != ''){
         $.ajax({
             type: "POST",
             url: "register.php",
-            data: data,
+            data: {name: data[0].value,dob:data[1].value,gender:data[2].value,rollNum:data[3].value,email:data[4].value,phoneNum:data[5].value,dept:data[6].value,q1:data[7].value,q2:data[8].value,q3:data[9].value,q4:data[10].value,q5:data[11].value,q6:data[12].value,q7:data[13].value},
             success: function(data){
 
             $('#response').html(data);
@@ -231,8 +230,6 @@ h1{
             var arr = buttonControl.name;
             var id = "p_q" + arr.substr(1, 4);
             document.getElementById(id).innerHTML = buttonControl.value;
-            console.log(arr.substr(1, 4));
-            console.log(buttonControl.value);
       }
   </script>
   </body>
