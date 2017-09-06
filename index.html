@@ -43,7 +43,7 @@ h1{
                               <div class = "row">
                                     <div class = "col-xs-4">
                                           <b>Male</b><i class="fa fa-mars" aria-hidden="true"></i>
-                                                <input type="radio" id="male" name="gender" value="   male" required="required">
+                                                <input type="radio" id="male" name="gender" value="male" checked required="required">
                                     </div>
                                     <div class = "col-xs-4">
                                           <b>Female</b><i class="fa fa-venus" aria-hidden="true"></i>
@@ -196,12 +196,26 @@ h1{
   </div>
   <script>
         $('#submit').click(function(e){
-
+             var flag = true;
+             var data = $('form').serializeArray();
+             if(data[0].value.length == 0) {
+              flag = false;
+              alert("Please enter your name");
+             }
+             else if (data[1].value.length == 0) {
+              flag = false;
+              alert("Please enter the date of birth dd-mm-yyyy");
+             }
+             else if (data[2].value.length == 0) {
+              flag = false;
+              alert("Please enter a gender");
+             }
+             else if (data[3].value.length != 9) {
+              flag = false;
+              alert("Please Enter a valid 9 digit roll number");
+             }
+             console.log(data);
         e.preventDefault();
-        
-        
-        var data = $('form').serializeArray();
-        console.log(data);
       
         $.ajax({
             type: "POST",
@@ -214,8 +228,8 @@ h1{
             $('#response').html('There is an error!');
                                     }
                     });
-     
             });
+
       function change(buttonControl) {
             var arr = buttonControl.name;
             var id = "p_q" + arr.substr(1, 4);
