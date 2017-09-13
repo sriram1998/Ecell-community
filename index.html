@@ -1,0 +1,397 @@
+<!doctype html>
+<html>
+  <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+
+      <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+
+      <title>Ecell community</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/css/bootstrapvalidator.min.css "/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+      <link rel = "stylesheet" type="text/css" href="form.css">
+      <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+h1{
+  position: absolute;
+  margin-top: -5%;
+  margin-left: 13%;
+}
+  </style>
+
+  <body>
+  <div class = "container-fluid">
+      
+      <div class = "center" id="response">
+
+            <form id="myForm" class = "ecellSignup" method = "post">
+            <div class = "row center">
+              <div class = "col-xs-12">
+                <h1>E-CELL REGISTRATION</h1>
+              </div>
+            </div>
+
+                  <div class = "row">
+                        <div class="col-xs-12">
+                          <div class="form-group">
+                              <label for="name">NAME:</label>
+                              <input type="text" id="name" name="name" placeholder="Your name:" class = "ecellInput" class="form-control" required="required">
+                          </div>
+                        </div>
+                  </div>
+            
+                  <div class = "row">
+                        <div class="col-xs-12">
+                          <div class="form-group">
+                            
+                          
+                              <label for="dob">DATE OF BIRTH</label>
+                              <input type="text" class="form-control" name="dob" id="dob" placeholder="DD/MM/YYYY" class="ecellInput" required="required" />
+                             
+                              
+                          </div>
+                          
+                        </div>
+                  </div>
+            
+                  <div class = "row">
+                        <div class="col-xs-12">
+                              <label for="gender">GENDER:</label>
+                              <div class = "row">
+                                    <div class = "col-xs-4">
+
+                                          <b>Male</b><i class="fa fa-mars" aria-hidden="true"></i>
+                                                <input type="radio" id="male" name="gender" value="male" checked required="required">
+                                    </div>
+                                    <div class = "col-xs-4">
+                                          <b>Female</b><i class="fa fa-venus" aria-hidden="true"></i>
+                                          <input type="radio" id="female" name="gender" value="female" required="required">
+                                    </div>
+                                    <div class = "col-xs-4">
+                                          <b>Other</b><i class="fa fa-transgender-alt" aria-hidden="true"></i>
+                                          <input type="radio" id="other" name="gender" value="other" required="required">
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            
+                  <div class = "row">
+                        <div class="col-xs-12">
+                          <div class="form-group">
+                              <label for="roll number">ROLL NUMBER:</label>
+                              <input type="text" id="rollNum" class="form-control" name="rollNum"  class = "ecellInput" required="required">
+                          </div>
+                        </div>
+                  </div>
+            
+                  <div class = "row">
+                        <div class="col-xs-12">
+                          <div class="form-group">
+                              <label for="email">EMAIL:</label>
+                              <input type="email" id="email" placeholder="Email" class="form-control" class = "ecellInput" name = "email" required="required">
+                          </div>
+                        </div>
+                  </div>
+
+                  <div class = "row">
+                        <div class="col-xs-12">
+                          <div class="form-group">
+                              <label for="phoneNum">PHONE NUMBER:</label>
+                              <input type="text" id="phoneNum" class="form-control" name="phoneNum"  class = "ecellInput" required="required">
+                          </div>
+                        </div>
+                  </div>
+            
+            
+                  <div class = "row">
+                        <div class="col-xs-12">
+                              <label for="dept">DEPARTMENT:</label>
+                              <select name="dept" placeholder="department" id="dept" required="required">
+                                    <option value="CSE">CSE</option>
+                                    <option value="ECE">ECE</option>
+                                    <option value="EEE">EEE</option>
+                                    <option value="MECH">MECH</option>
+                                    <option value="ICE">ICE</option>
+                                    <option value="CIVIL">CIVIL</option>
+                                    <option value="CHEM">CHEM</option>
+                                    <option value="PROD">PROD</option>
+                                    <option value="META">META</option>
+                                    <option value="DOMS">DOMS</option>
+                                    <option value="OTHER">OTHER</option>      
+                              </select> 
+                        </div>
+                  </div>
+            
+                  <div class = "row">
+                        <div class="col-xs-12">
+
+                              <label for = "q1">On a scale of 1-10, how much do you read about entrepreneurship?</label>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                              <input type = "range" data-fv-between-max="true"  name = "q1" id = "q1" step="10"   onchange = "change(this)"/>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                              <p id = "p_q1">5</p>
+                        </div>
+                  </div>
+            
+                  <div class = "row">
+                        <div class="col-xs-12">
+                              <label for = "q2">On a scale of 1-10, how much do you know about start-ups?</label>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                              <input type = "range" data-fv-between-max="true"  name = "q2" id = "q2" step="10"   onchange = "change(this)"/>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                              <p id = "p_q2">5</p>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-12">
+                              <label for = "q3">On a scale of 1-10, how much do you know aboutbusiness models?    </label>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                              <input type = "range" data-fv-between-max="true"  name = "q3" id = "q3" step="10"   onchange = "change(this)"/>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                              <p id = "p_q3">5</p>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-12">
+                              <label for = "q4">On a scale of 1-10, how much do you know about investments related to start-ups? </label>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                              <input type = "range" data-fv-between-max="true"  name = "q4" id = "q4" step="10"   onchange = "change(this)"/>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                              <p id = "p_q4">5</p>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-12">
+                              <label for = "q5">On a scale of 1-10, rate your knowledge on the various resources provided by our college for starting up?</label>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                              <input type = "range" data-fv-between-max="true"  name = "q5" id = "q5" step="10"   onchange = "change(this)"/>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                              <p id = "p_q5">5</p>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-12">
+                              <label for = "q6">On a scale of 1-10, how likely are you to startupin college?      </label>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                              <input type = "range" data-fv-between-max="true"  name = "q6" id = "q6" step="10"   onchange = "change(this)"/>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                              <p id = "p_q6">5</p>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-12">
+                              <label for = "q7">On a scale of 1-10, how likely are you to start-up in life?
+                              </label>
+                        </div>
+                  </div>
+                  <div class = "row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                              <input type = "range" data-fv-between-max="true"  name = "q7" id = "q7" step="10"   onchange = "change(this)"/>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                              <p id = "p_q7">5</p>
+                        </div>
+                  </div>
+                  <input type="submit" value="Register" class = "btn btn-block submitBtn" id="submit">
+      </form>
+      </div>
+  </div>
+  <script>
+         
+
+
+            $('#myForm').bootstrapValidator({
+              framework: 'bootstrap',
+
+              // console.log(q1, q2);
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The  name is required and cannot be empty'
+                    }
+                }
+            },
+            
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required'
+                    },
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
+                    }
+                }
+            },
+            gender: {
+                validators: {
+                    notEmpty: {
+                        message: 'The gender is required'
+                    }
+                }
+            },
+            phoneNum: {
+              validators: {
+                notEmpty: {
+                  message: 'The Phone number is required'
+                }
+              }
+            },
+
+            rollNum:{
+              validators:{
+                notEmpty:{
+                  message:'The roll number is required'
+                }
+              }
+            },
+            
+            dob:{
+              validators:{
+                date:{
+                  format:"DD/MM/YYYY",
+                  message:"The value is not a valid date"
+                }
+              }
+            },
+            q1:{
+                validators: {
+                    between: {
+                        min: 0,
+                        max: 100,
+                        message: 'The value must be between 1 and 100'
+                    }
+                }
+            },
+            q2:{
+                validators: {
+                    between: {
+                        min: 0,
+                        max: 100,
+                        message: 'The value must be between 1 and 100'
+                    }
+                }
+            },
+            q3:{
+                validators: {
+                    between: {
+                        min: 0,
+                        max: 100,
+                        message: 'The value must be between 1 and 100'
+                    }
+                }
+            },
+            q4:{
+                validators: {
+                    between: {
+                        min: 0,
+                        max: 100,
+                        message: 'The value must be between 1 and 100'
+                    }
+                }
+            },
+            q5:{
+                validators: {
+                    between: {
+                        min: 0,
+                        max: 100,
+                        message: 'The value must be between 1 and 100'
+                    }
+                }
+            },
+            q6:{
+                validators: {
+                    between: {
+                        min: 0,
+                        max: 100,
+                        message: 'The value must be between 1 and 100'
+                    }
+                }
+            },
+            q7:{
+                validators: {
+                    between: {
+                        min: 0,
+                        max: 100,
+                        message: 'The value must be between 1 and 100'
+                    }
+                }
+            },
+          
+        },
+        submitHandler: function(validator, form, submitButton) {
+          var data = $('form').serializeArray();
+          console.log(data);
+            
+            $.ajax({
+            type: "POST",
+            url: "register.php",
+            data: {name: data[0].value,dob:data[1].value,gender:data[2].value,rollNum:data[3].value,email:data[4].value,phoneNum:data[5].value,dept:data[6].value,q1:data[7].value/10,q2:data[8].value/10,q3:data[9].value/10,q4:data[10].value/10,q5:data[11].value/10,q6:data[12].value/10,q7:data[13].value/10},
+            success: function(data){
+            $('#response').html(data);
+                                    },
+             fail: function(data){
+            $('#response').html('There is an error!');
+                                    }
+                    });
+
+        }
+    });
+           
+        
+            
+      function change(buttonControl) {
+            var arr = buttonControl.name;
+            var id = "p_q" + arr.substr(1, 4);
+            document.getElementById(id).innerHTML = buttonControl.value/10;
+      }
+  </script>
+  </body>
+  </html>
